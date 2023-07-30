@@ -50,12 +50,12 @@ facebook = oauth.register(
 )
 
 # # AWS STS клиент
-# sts_client = boto3_client(
-#     'sts',
-#     aws_access_key_id='YOUR_AWS_ACCESS_KEY',
-#     aws_secret_access_key='YOUR_AWS_SECRET_ACCESS_KEY',
-#     region_name='us-west-2'  # Измените на ваш AWS регион
-# )
+sts_client = boto3_client(
+    'sts',
+    aws_access_key_id='#aws_access_key_id',
+    aws_secret_access_key='#aws_secret_access_key',
+    region_name='us-west-2'  # Измените на ваш AWS регион
+    )
 
 def decode_jwt(token):
     try:
@@ -142,12 +142,12 @@ def authorize_google():
 
     print(user_info)
 
-    sts_client = boto3_client(
-    'sts',
-    aws_access_key_id='#aws_access_key_id',
-    aws_secret_access_key='#aws_secret_access_key',
-    region_name='us-west-2'  # Измените на ваш AWS регион
-    )
+    # sts_client = boto3_client(
+    # 'sts',
+    # aws_access_key_id='#aws_access_key_id',
+    # aws_secret_access_key='#aws_secret_access_key',
+    # region_name='us-west-2'  # Измените на ваш AWS регион
+    # )
 
 
     response = sts_client.assume_role_with_web_identity(
